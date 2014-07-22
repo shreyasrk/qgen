@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% if title %}
+	<title>{{title}}</title>
+	{% else %}
+	<title>Welcome to Flask!</title>
+	{% endif %}
+</head>
+<body>
+	<div>QGen: <a href="/index">Home</a></div>
+	<hr>
+	{% block content%} {% endblock %}
+</html>
