@@ -7,10 +7,8 @@ from forms import LoginForm
 def index():
     user = {'username': 'Shreyas'}
     title = 'QGen: Home'
-    posts = [{'author': {'nickname': 'Shreyas'}, 'body': 'The first post.'},
-        {'author': {'nickname': 'Rajeev'}, 'body': 'The second post.'},
-        {'author': {'nickname': 'Kulkarni'}, 'body': 'The third post.'}]
-    return render_template('index.html', title=title, user=user, posts=posts)
+    # return render_template('index.html', title=title, user=user)
+    return redirect('/login')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
