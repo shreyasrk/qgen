@@ -5,4 +5,4 @@ app = Flask(__name__)
 app.config.from_object('config')
 db = neo4j.GraphDatabaseService("http://localhost:7474/db/data/")
 
-from app import views
+from app import views, models

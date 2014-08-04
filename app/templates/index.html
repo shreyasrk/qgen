@@ -1,8 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
-	{% for post in posts %}
-	<div><b>Author:</b>{{ post.author.nickname}}</p>
-		<p>Post: {{post.body}}</p>
-	</div>
-	{% endfor %}
+	<form action='/search/' method="post">
+		<div align="center">
+			Input-1: <input type="text" name="inp_1"><br>
+			Input-2: <input type="text" name="inp_2"><br>
+			Input-3: <input type="text" name="inp_3">
+		</div>
+		<div align="center">
+			<button type="submit">Find Questions!</button>
+		</div>
+	</form>
+	<hr>
 {% endblock %}

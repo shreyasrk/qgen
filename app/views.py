@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect
+from flask import render_template, flash, redirect, request
 from app import app
 from forms import LoginForm
 
@@ -7,8 +7,7 @@ from forms import LoginForm
 def index():
     user = {'username': 'Shreyas'}
     title = 'QGen: Home'
-    # return render_template('index.html', title=title, user=user)
-    return redirect('/login')
+    return render_template('index.html', title=title, user=user)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -20,3 +19,11 @@ def login():
     	title='Sign In', 
     	form=form,
         providers = app.config['OPENID_PROVIDERS'])
+
+@app.route('/search')
+def search():
+    inp_1 = request.args.get('inp_1', '')
+    inp_2 = request.args.get('inp_2', '')
+    inp_3 = request.args.get('inp_3', '')
+
+    return "Got the Inputs! Call your function here.."
